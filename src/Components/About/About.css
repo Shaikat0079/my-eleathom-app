@@ -1,0 +1,181 @@
+.about {
+  width: 100%;
+  min-height: 100vh;
+  color: #05805f;
+  text-align: center;
+  background-size: cover;
+  margin-top: calc(4rem + 1rem);
+}
+
+.infoAbout {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers button and dialogue box */
+  text-align: center; /* optional: center text inside */
+}
+
+.infoAbout p {
+  color: gray;
+  margin: 0.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #05805f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+/* Hover effect */
+.btn:hover {
+  background-color: #059c74;
+  /* transform: translateY(-2px); */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dialogue-box {
+  margin-top: 1rem;
+  padding: 1.2rem 2rem;
+  background: rgba(255, 255, 255, 0.15); /* soft glass effect */
+  border-radius: 1rem; /* rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* nice drop shadow */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  font-size: 1rem;
+  max-width: 800px;
+  width: 100%;
+  animation: fadeSlideIn 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Entry animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.directors h1{
+  margin: 3rem 0;
+}
+
+.director {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #f4f4f4; /* optional background */
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ensures all children including wrapper are centered */
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image-wrapper {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #05805f; /* Keeps border color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hides image overflow */
+  margin-bottom: 1rem;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  filter: grayscale(100%);
+  display: block;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #05805f;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.card a {
+  display: inline-block;
+  color: #05805f;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.box {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.box .icon {
+  font-size: 3rem;
+  color: #05805f;
+  margin-bottom: 1rem;
+}
+
+.box h3 {
+  color: #05805f;
+  margin-bottom: 0.5rem;
+}
+
+.box p {
+  color: #333;
+  font-size: 0.95rem;
+}

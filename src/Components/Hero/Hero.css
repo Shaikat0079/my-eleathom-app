@@ -1,0 +1,51 @@
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: #05805f;
+    background-size: cover;
+    margin-top: calc(4rem + 1rem); /* nav height + spacing */
+    color: aliceblue;
+    display: flex;
+    padding: 20% 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero>div{
+    width: 45%;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* justify-content: start; */
+    /* justify-items: start; */
+    align-items: start;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* transparent white */
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 135, 104, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    flex-wrap: wrap;
+}
+
+.iconService{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: end;
+}
+.ricons {
+    background-color: #05805f;   /* or use #006400, #228B22, etc. */
+    color: white;                  /* icon color */
+    padding: 0.6rem;               /* space inside the icon */
+    border-radius: 40%;           /* makes it perfectly circular */
+    font-size: 3rem;              /* adjust as needed */
+    display: inline-flex;         /* centers icon if used with alignments */
+    align-items: center;
+    justify-content: center;
+}
+
