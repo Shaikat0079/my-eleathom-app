@@ -32,7 +32,7 @@ const Mentorship = () => {
       <div className="boxes">
         <div className="box">
           <div className="icon">
-            <IoPersonOutline/>
+            <IoPersonOutline />
           </div>
           <h3>Personal Branding</h3>
           <p>
@@ -43,7 +43,7 @@ const Mentorship = () => {
 
         <div className="box">
           <div className="icon">
-            <IoDocumentTextOutline/>
+            <IoDocumentTextOutline />
           </div>
           <h3>Technical Writing</h3>
           <p>
@@ -54,7 +54,7 @@ const Mentorship = () => {
 
         <div className="box">
           <div className="icon">
-            <FiZap/>
+            <FiZap />
           </div>
           <h3>Career Success</h3>
           <p>
@@ -62,6 +62,35 @@ const Mentorship = () => {
             practitioner in today's competitive market.
           </p>
         </div>
+      </div>
+      <h1 className="mentor-Big">
+        EleaThom Mentorship 2025 Assistants & Alumni
+      </h1>
+      <div className="images-name">
+        <div className="image-card">
+          <img src="/images/Noxolo Mkhize.jpg" alt="Noxolo Mkhize" />
+          <h4>Noxolo Mkhize</h4>
+        </div>
+
+        <div className="image-card">
+          <img src="/images/Motlatso Mohale .jpg" alt="Motlatso Mohale" />
+          <h4>Motlatso Mohale</h4>
+        </div>
+
+        <div className="image-card">
+          <img src="/images/Mihlali Hoofman.jpg" alt="Mihlali Hoofman" />
+          <h4>Mihlali Hoofman</h4>
+        </div>
+
+        <div className="image-card">
+          <img src="/images/Kaylen Healy.jpg" alt="Kaylen Healy" />
+          <h4>Kaylen Healy</h4>
+        </div>
+      </div>
+      <h1 className="mentor-Big">EleaThom 2025 Mentors</h1>
+      <div className="mentor-info">
+        <p>Our experienced mentors guide and support each mentee throughout their journey.</p>
+        <small>Mentor profiles and photos will be updated soon.</small>
       </div>
     </div>
   );
