@@ -5,7 +5,8 @@ import SocialCards from "./SocialCards";
 
 const Events = () => {
   return (
-    <div>
+    <div className="events">
+      {/* <= added class */}
       <h1 className="events-head">Events & Media</h1>
       <p className="events-text">
         Join our annual seminar and stay connected through our media channels
@@ -32,10 +33,8 @@ const Events = () => {
         </p>
         <button className="register-btn">Register Now</button>
       </div>
-      {/* <div className="social-cards">
 
-      </div> */}
-      <SocialCards/>
+      <SocialCards />
     </div>
   );
 };

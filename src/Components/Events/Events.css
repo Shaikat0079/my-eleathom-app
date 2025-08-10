@@ -1,56 +1,106 @@
-.events-head{
-    margin-top: 5rem;
-}
-.events-head,.events-text{
-    text-align: center;
-    color: #05805f;;
-}
-.events-text{
-    color: black;
-    margin: 1rem 0;
+/* ====== WRAPPER & HEADINGS ====== */
+.events {
+  width: 100%;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 6vw, 10%);
 }
 
-.event-info{
-    width: 80%;
-    margin: 5rem auto;
-    text-align: center;
-    background-color: #05805f;
-    color:white;
-    padding: 2.5rem;
-    border-radius: 20px;
+.events-head {
+  text-align: center;
+  margin: 0 0 .5rem 0;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  color: #05805f;
 }
 
-.date-location{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    margin: 1rem 0;
+.events-text {
+  text-align: center;
+  color: #333;
+  font-size: clamp(1rem, 1.7vw, 1.125rem);
+  margin: 0 0 1.25rem 0;
 }
 
-.date-location .icon{
-    font-size: 3rem;
+/* ====== EVENT CARD ====== */
+.event-info {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+  padding: clamp(1rem, 3vw, 1.75rem);
+  text-align: center;
 }
 
+.event-info > h1 {
+  margin: .25rem 0 1rem;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  color: #05805f;
+}
+
+/* date + pin + location row */
+.date-location {
+  display: grid;
+  grid-template-columns: auto auto auto; /* shrink to content size */
+  justify-content: center; /* centers the whole grid horizontally */
+  align-items: center;      /* vertically center within each row */
+  gap: 1rem;
+  margin: 0 auto 1rem;
+}
+
+
+/* date tile */
+.e-date {
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 12px;
+  background: #e9f5f1;
+  border: 1px solid #bfe3d7;
+}
+.e-date h1 { margin: 0; line-height: 1; font-size: 1.8rem; color:#046b4e; }
+.e-date p { margin: 0; font-weight: 700; color:#05805f; }
+.e-date small { color:#466; }
+
+/* pin icon */
+.date-location .icon {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  background: #05805f; color:#fff;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+/* location text */
+.location h4 { margin: 0; font-size: 1.05rem; color:#05805f; }
+.location small { color:#666; }
+
+/* event body */
+.event-info > p {
+  color:#333; line-height:1.7; margin: .25rem 0 1rem;
+}
+
+/* CTA */
 .register-btn {
-  background-color: #1fb78e;
-  margin: 1rem auto;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  background: #05805f; color: #fff; border: none;
+  padding: .75rem 1.5rem; border-radius: 10px;
+  font-weight: 600; cursor: pointer;
+  transition: background .25s ease, transform .2s ease;
+}
+.register-btn:hover { background:#046b4e; transform: translateY(-2px); }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 640px){
+  .date-location {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+  .date-location .icon { margin: .25rem auto; }
+  .location { text-align: center; }
+  .e-date { width: 78px; height: 78px; }
+  .e-date h1 { font-size: 1.6rem; }
 }
 
-.register-btn:hover {
-  background-color: white; /* darker shade for hover */
-  color: #1fb78e;
-  transform: translateY(-5px);
-}
-
-.register-btn:active {
-  transform: translateY(0); /* reset on click */
+/* Motion a11y */
+@media (prefers-reduced-motion: reduce){
+  .register-btn { transition: none; }
 }

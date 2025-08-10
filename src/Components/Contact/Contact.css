@@ -1,0 +1,144 @@
+:root{
+  --brand:#05805f;
+  --brand-dark:#0f3f32;
+  --ink:#0b0b0b;
+}
+
+/* Section wrapper */
+.contact{
+  width:100%;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 6vw, 10%);
+}
+
+/* Header */
+.contact-head{
+  text-align:center;
+  margin-bottom: clamp(1.25rem, 4vw, 2rem);
+}
+.contact-head h1{
+  margin:0 0 .4rem 0;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  color: var(--brand-dark);
+}
+.contact-head p{
+  margin:0;
+  color:#444;
+  font-size: clamp(1rem, 1.7vw, 1.1rem);
+}
+
+/* Grid: info | form */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items:start;
+}
+
+/* two-columns on wider screens */
+@media (min-width: 980px){
+  .contact-grid{
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+/* Left: info list */
+.contact-list{
+  display:flex;
+  flex-direction:column;
+  gap: 1.4rem;
+}
+.contact-item{
+  display:flex;
+  gap:.9rem;
+  align-items:flex-start;
+}
+.contact-item h4{
+  margin:0 0 .2rem 0;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.contact-item p{
+  margin:0;
+  color:#3c3c3c;
+  line-height:1.5;
+}
+
+/* icon square */
+.contact-icon{
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  display:grid; place-items:center;
+  background: #1e6b55;
+  color:#fff;
+  font-size: 1.25rem;
+}
+
+/* Right: form card */
+.contact-card{
+  background: #f7f9f8;
+  border: 1px solid #e5efec;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  padding: clamp(1rem, 2.8vw, 1.6rem);
+}
+.contact-card h3{
+  text-align:center;
+  margin: .2rem 0 1rem 0;
+  color:#154c3d;
+  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+}
+.contact-form{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:.75rem;
+}
+.contact-form label{
+  font-size:.92rem;
+  color:#2b2b2b;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  border:1px solid #dbe7e3;
+  background:#fff;
+  border-radius: 10px;
+  padding:.75rem .9rem;
+  font-size:1rem;
+  outline:none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:#b7ddd3;
+  box-shadow: 0 0 0 3px rgba(5,128,95,.12);
+}
+
+/* Submit */
+.contact-submit{
+  margin-top:.5rem;
+  width:100%;
+  background:#0f3f32;      /* dark green like screenshot */
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  padding:.85rem 1rem;
+  font-weight:700;
+  cursor:pointer;
+  transition: background .25s ease, transform .2s ease;
+}
+.contact-submit:hover{
+  background:#0c362a;
+  transform: translateY(-1px);
+}
+
+/* note text */
+.contact-note{
+  display:block;
+  margin-top:.6rem;
+  color:#6a7c77;
+  text-align:center;
+}
+
+/* Small devices */
+@media (max-width: 480px){
+  .contact-icon{ width:38px; height:38px; font-size:1.1rem; }
+}

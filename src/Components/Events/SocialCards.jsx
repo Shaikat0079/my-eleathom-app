@@ -10,7 +10,7 @@ const SocialCards = () => {
       desc: "Watch educational content and mentorship tips",
       link: "https://www.youtube.com/@atleganggovuza6733",
       color: "red",
-      text:"Atlegang Govuza"
+      text: "Atlegang Govuza",
     },
     {
       icon: <FaInstagram />,
@@ -18,7 +18,7 @@ const SocialCards = () => {
       desc: "Follow our daily updates and behind-the-scenes content",
       link: "https://www.instagram.com/eleathom_mentorship/",
       color: "#E1306C",
-      text:"@eleathom_mentorship"
+      text: "@eleathom_mentorship",
     },
     {
       icon: <FaLinkedin />,
@@ -26,7 +26,7 @@ const SocialCards = () => {
       desc: "Connect with our professional network",
       link: "https://www.linkedin.com/company/eleathom-mentorship-npc/",
       color: "#0077B5",
-      text:"Company Page"
+      text: "Company Page",
     },
     {
       icon: <MdEmail />,
@@ -34,17 +34,19 @@ const SocialCards = () => {
       desc: "Get in touch directly with our team",
       link: "mailto:info@eleathom.co.za",
       color: "#05805f",
-      text:"info@eleathom.co.za"
-    }
+      text: "info@eleathom.co.za",
+    },
   ];
 
   return (
     <div className="social-cards">
       {socialLinks.map((social, index) => (
-        <div className="social-card" key={index}>
-          <div className="social-icon" style={{ color: social.color }}>
-            {social.icon}
-          </div>
+        <div
+          className="social-card"
+          key={index}
+          style={{ color: social.color }}
+        >
+          <div className="social-icon">{social.icon}</div>
           <h3>{social.title}</h3>
           <p>{social.desc}</p>
           <a

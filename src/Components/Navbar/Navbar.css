@@ -1,63 +1,88 @@
-nav{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5rem 5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: grey;
-    z-index: 10;
-    margin-bottom: 50px;
-    background-color: white;
-}
-nav img{
-    width: 4rem;
-    border: .20rem solid darkgreen;
-    margin: 0;
-    border-radius: 20%;
-    margin: 0.15rem;
-}
-nav ul{
-    display: flex;
-    justify-content: space-between;
-}
-nav ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 5px 10px;
-    font-size: 1rem;
-    position: relative;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-/* Pseudo-element for underline */
-nav ul li::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* distance from text */
-    width: 0;
-    height: 2px;
-    background-color: darkgreen; /* or any color you want */
-    transition: width 0.3s ease;
+/* ===== constants ===== */
+:root{
+  --brand:#05805f;
+  --nav-h:72px;              /* keep in sync with JSX offset */
 }
 
-/* Hover effect: underline and text color change */
-nav ul li:hover {
-    color: darkgreen; /* text color on hover */
+/* sticky header */
+.nav-container{
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .6rem 5rem;                     /* desktop spacing */
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
-/* On hover, expand the underline */
-nav ul li:hover::after {
-    width: 100%;
+/* push page content below sticky nav */
+html, body { margin: 0; }
+body{ padding-top: var(--nav-h); }
+
+/* logo block */
+.logo{ display:flex; align-items:center; gap:.6rem; }
+.logo img{
+  width:3rem; height:3rem; object-fit:cover;
+  border-radius:20%; border:.2rem solid var(--brand);
+}
+.brand h1{ margin:0; color:var(--brand); font-size:1.25rem; line-height:1.1; }
+.brand small{ display:block; color:#494848; margin-top:2px; }
+
+/* links (desktop) */
+.nav-links{
+  display:flex; gap:1.1rem; list-style:none; margin:0; padding:0;
+}
+.nav-links li{ margin:0; padding:0; }
+.nav-links li a{
+  cursor:pointer; text-decoration:none; color:#555; font-size:.98rem;
+  position:relative; padding:.25rem 0; transition:color .25s;
+}
+/* underline ONLY on hover */
+.nav-links li a::after{
+  content:""; position:absolute; left:0; bottom:-4px; height:2px; width:0;
+  background:var(--brand); transition:width .3s;
+}
+.nav-links li a:hover{ color:var(--brand); }
+.nav-links li a:hover::after{ width:100%; }
+
+/* hamburger (hidden on desktop) */
+.hamburger{
+  display:none; background:none; border:none; cursor:pointer;
+  font-size:1.6rem; color:var(--brand);
 }
 
-.logo{
-    display: flex;
-    align-items: center;
+/* ===== responsive ===== */
+@media (max-width: 1024px){
+  .nav-container{ padding:.6rem 2rem; }
 }
-nav h1{
-    color: darkgreen;
+
+@media (max-width: 768px){
+  .nav-container{ padding:.5rem 1rem; }
+
+  .logo img{ width:2.4rem; height:2.4rem; }
+  .brand h1{ font-size:1.05rem; }
+  .brand small{ font-size:.7rem; }
+
+  .hamburger{ display:block; }
+
+  /* slide-in panel for links */
+  .nav-links{
+    position:absolute; top:100%; right:0;
+    flex-direction:column; gap:.6rem;
+    background:#fff; width:240px; padding:1rem 1.25rem;
+    box-shadow:-2px 6px 16px rgba(0,0,0,.12);
+    transform:translateX(100%); transition:transform .28s ease;
+  }
+  .nav-links.active{ transform:translateX(0); }
+
+  .nav-links li a{ font-size:.95rem; padding:.6rem .2rem; }
+}
+
+/* very small phones */
+@media (max-width: 380px){
+  .nav-links{ width:88vw; }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .nav-links, .nav-links li a::after{ transition:none !important; }
 }

@@ -1,51 +1,119 @@
+/* ========== HERO ========== */
 .hero{
-    width: 100%;
-    min-height: 100vh;
-    background: #05805f;
-    background-size: cover;
-    margin-top: calc(4rem + 1rem); /* nav height + spacing */
-    color: aliceblue;
-    display: flex;
-    padding: 20% 10%;
-    justify-content: space-between;
-    align-items: center;
+  /* layout */
+  display: grid;
+  grid-template-columns: 1fr;           /* stacks by default (mobile-first) */
+  gap: 1.75rem;
+  align-items: center;
+
+  /* sizing & spacing */
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(5rem, 10vw, 8rem) clamp(1rem, 6vw, 10%);
+  margin-top: 0;
+      /* space for your fixed navbar */
+
+  /* look */
+  background: #05805f;
+  background-size: cover;
+  color: aliceblue;
 }
-.hero>div{
-    width: 45%;
+.hero .info h1:first-child { margin-top: 0; }
+
+/* TWO-COLUMN on wider screens */
+@media (min-width: 900px){
+  .hero{
+    grid-template-columns: 1fr 1fr;     /* info | services */
+    gap: 2.5rem;
+  }
 }
 
-.services {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    /* justify-content: start; */
-    /* justify-items: start; */
-    align-items: start;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1); /* transparent white */
-    border-radius: 1rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 104, 0.37);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: white;
-    flex-wrap: wrap;
+/* ========== INFO (LEFT) ========== */
+.hero .info h1{
+  margin: 0;
+  line-height: 1.05;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.2rem);
 }
 
+.hero .info p{
+  margin-top: .9rem;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  color: #ffffffd0;
+}
+
+/* ========== SERVICES (RIGHT) ========== */
+.services{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+
+  /* glass card */
+  padding: clamp(1rem, 3vw, 2rem);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(31,135,104,0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+/* one service row */
 .iconService{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: end;
-}
-.ricons {
-    background-color: #05805f;   /* or use #006400, #228B22, etc. */
-    color: white;                  /* icon color */
-    padding: 0.6rem;               /* space inside the icon */
-    border-radius: 40%;           /* makes it perfectly circular */
-    font-size: 3rem;              /* adjust as needed */
-    display: inline-flex;         /* centers icon if used with alignments */
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: .9rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  transition: background .25s ease, transform .25s ease;
 }
 
+.iconService:hover{
+  background: rgba(255,255,255,.12);
+  transform: translateY(-2px);
+}
+
+/* icon pill */
+.ricons{
+  background-color: #05805f;
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  padding: .6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  font-size: 1.6rem; /* keeps svg comfy inside */
+}
+
+/* text block next to icon */
+.texts h4{
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  font-weight: 700;
+}
+.texts small{
+  display: block;
+  opacity: .9;
+  font-size: .95rem;
+}
+
+/* ========== SMALL SCREENS TWEAKS ========== */
+@media (max-width: 900px){
+  .hero{ text-align: center; }
+  .services{ align-items: center; }
+  .iconService{ justify-content: center; }
+}
+@media (max-width: 480px){
+  .ricons{ width: 2.6rem; height: 2.6rem; padding: .5rem; font-size: 1.4rem; }
+  .iconService{ padding: .75rem .9rem; }
+}
