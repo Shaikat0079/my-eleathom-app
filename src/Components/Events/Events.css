@@ -38,11 +38,12 @@
 /* date + pin + location row */
 .date-location {
   display: grid;
-  grid-template-columns: auto auto auto; /* shrink to content size */
+  grid-template-columns: repeat(3, auto); /* shrink to content size */
   justify-content: center; /* centers the whole grid horizontally */
   align-items: center;      /* vertically center within each row */
   gap: 1rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 
@@ -92,8 +93,11 @@
 @media (max-width: 640px){
   .date-location {
     grid-template-columns: 1fr;
+    justify-items: center;
     gap: .75rem;
+    /* text-align: center; */
   }
+  
   .date-location .icon { margin: .25rem auto; }
   .location { text-align: center; }
   .e-date { width: 78px; height: 78px; }
