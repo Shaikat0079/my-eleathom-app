@@ -28,15 +28,15 @@ const Hero = () => {
         <div className="iconService">
             <HiOutlineUserGroup className="ricons"/>
             <div className="texts">
-                <h4>Legal Resources</h4>
-                <small>Comprehensive study materials</small>
+                <h4>Community</h4>
+                <small>Connect with peers</small>
             </div>
         </div>
         <div className="iconService">
             <LuCalendarMinus2 className="ricons"/>
             <div className="texts">
-                <h4>Legal Resources</h4>
-                <small>Comprehensive study materials</small>
+                <h4>Events</h4>
+                <small>Professional development</small>
             </div>
         </div>
       </div>

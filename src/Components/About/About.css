@@ -114,13 +114,15 @@
   line-height: 1.55;
 }
 
+
+
 /* LinkedIn link styled as subtle button */
 .card a {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: #fff;
-  background: #0a66c2;
+  color: #05805f;
+  /* background: #05805f; */
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   text-decoration: none;

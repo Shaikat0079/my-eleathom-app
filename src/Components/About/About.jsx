@@ -52,7 +52,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin /> Connect on LinkedIn
+              <FaLinkedin className="icon-Color" /> Connect on LinkedIn
             </a>
           </div>
           <div className="card">
@@ -66,7 +66,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin /> Connect on LinkedIn
+              <FaLinkedin className="icon-Color" /> Connect on LinkedIn
             </a>
           </div>
           <div className="card">
@@ -83,7 +83,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin /> Connect on LinkedIn
+              <FaLinkedin className="icon-Color" /> Connect on LinkedIn
             </a>
           </div>
           <div className="card">
@@ -103,7 +103,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin /> Connect on LinkedIn
+              <FaLinkedin className="icon-Color" /> Connect on LinkedIn
             </a>
           </div>
         </div>
